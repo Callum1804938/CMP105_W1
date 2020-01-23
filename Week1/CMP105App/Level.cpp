@@ -30,13 +30,14 @@ void Level::update()
 void Level::render()
 {
 	beginDraw();
-
+	//thuings to darw goes here
+	window->draw(rect);
 	endDraw();
 }
 
 void Level::beginDraw()
 {
-	window->clear(sf::Color(100, 149, 237));
+	window->clear(sf::Color(100, 0, 0));
 }
 
 // Ends rendering to the back buffer, and swaps buffer to the screen.
