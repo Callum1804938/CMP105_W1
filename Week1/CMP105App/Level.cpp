@@ -17,7 +17,7 @@ Level::Level(sf::RenderWindow* hwnd)
 	rect_blue.setPosition(550, 300);
 	rect_blue.setFillColor(sf::Color::Blue);
 
-	if (!font.loadFromFile("arial.ttf"))
+	if (!font.loadFromFile("font/arial.ttf"))
 	{
 		std::cout << "failure to load font file" << std::endl;
 	}
@@ -26,7 +26,8 @@ Level::Level(sf::RenderWindow* hwnd)
 	game_title.setString("A Shameless Copy");
 	game_title.setCharacterSize(30);
 	game_title.setFillColor(sf::Color::Yellow);
-	game_title.setStyle(sf::Text::Bold | sf::Text::Underlined);
+	game_title.setStyle(sf::Text::Bold);
+	game_title.setPosition(475, 0);
 }
 
 Level::~Level()
