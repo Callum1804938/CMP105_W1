@@ -166,6 +166,9 @@
   <ItemGroup>
     <None Include="test.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="font\arial.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

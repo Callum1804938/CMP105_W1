@@ -5,17 +5,28 @@ Level::Level(sf::RenderWindow* hwnd)
 	window = hwnd;
 
 	// initialise game objects
-	rect1.setSize(sf::Vector2f(200, 200));
-	rect1.setPosition(500, 250);
-	rect1.setFillColor(sf::Color::Red);
+	rect_red.setSize(sf::Vector2f(200, 200));
+	rect_red.setPosition(500, 250);
+	rect_red.setFillColor(sf::Color::Red);
 
-	rect2.setSize(sf::Vector2f(150, 150));
-	rect2.setPosition(525, 275);
-	rect2.setFillColor(sf::Color::Green);
+	rect_green.setSize(sf::Vector2f(150, 150));
+	rect_green.setPosition(525, 275);
+	rect_green.setFillColor(sf::Color::Green);
 
-	rect3.setSize(sf::Vector2f(100, 100));
-	rect3.setPosition(550, 300);
-	rect3.setFillColor(sf::Color::Blue);
+	rect_blue.setSize(sf::Vector2f(100, 100));
+	rect_blue.setPosition(550, 300);
+	rect_blue.setFillColor(sf::Color::Blue);
+
+	if (!font.loadFromFile("arial.ttf"))
+	{
+		std::cout << "failure to load font file" << std::endl;
+	}
+
+	game_title.setFont(font);
+	game_title.setString("A Shameless Copy");
+	game_title.setCharacterSize(30);
+	game_title.setFillColor(sf::Color::Yellow);
+	game_title.setStyle(sf::Text::Bold | sf::Text::Underlined);
 }
 
 Level::~Level()
@@ -39,16 +50,17 @@ void Level::render()
 {
 	beginDraw();
 	//thing to draw go here
-	window->draw(rect1);
-	window->draw(rect2);
-	window->draw(rect3);
+	window->draw(rect_red);
+	window->draw(rect_green);
+	window->draw(rect_blue);
+	window->draw(game_title);
 
 	endDraw();
 }
 
 void Level::beginDraw()
 {
-	window->clear(sf::Color(0, 0, 0));
+	window->clear(sf::Color(77,178,255));
 }
 
 // Ends rendering to the back buffer, and swaps buffer to the screen.
